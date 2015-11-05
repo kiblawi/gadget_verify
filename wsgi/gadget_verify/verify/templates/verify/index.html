@@ -1,0 +1,13 @@
+<HTML>
+    <head>
+        <title>Gene Abstract Match</title>
+    </head>
+    <body>
+        <p>Welcome to the GADGET verification tool. Please enter your name in the space below and select from the drop down menu the query you want to verify.</p>
+        <form action="#" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="OK">
+        </form>
+    <body>
+</HTML>
