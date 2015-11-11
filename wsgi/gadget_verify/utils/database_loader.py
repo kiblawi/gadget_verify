@@ -17,11 +17,11 @@ with open(datafile,'rU') as file:
         if true_relevant_string in ['TRUE','True','T']:
             true_relevant = True
         entrez = int(splitline[1])
-        symbol = splitline[2]
-        gene_name = splitline[3]
-        synonyms = splitline[4]
-        abstract_name = splitline[5]
-        author = splitline[6]
+        symbol = splitline[2].replace('"','')
+        gene_name = splitline[3].replace('"','')
+        synonyms = splitline[4].replace('"','')
+        abstract_name = splitline[5].replace('"','')
+        author = splitline[6].replace('"','')
         pmlink = splitline[7]
         pmid = int(splitline[8])
         queryname = splitline[9].strip()
