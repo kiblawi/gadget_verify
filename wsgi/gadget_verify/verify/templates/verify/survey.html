@@ -1,12 +1,12 @@
 <HTML>
-
+    <font face = "sans-serif">
 
     <head>
         <title>Gene Abstract Match</title>
     </head>
     <h1>{{ surveyor.name }} - {{ surveyor.query }}</h1>
     <body>
-        <p><b>Instructions:</b> Listed below are a list of genes sorted in alphabetical order by gene symbol. Your job is to select which genes are relevant for the query <i>{{ surveyor.query }}</i>. There are some "decoy" genes incorporated with this list so it is ok if you do not select some of the genes as relevant. Once you hit submit you should be taken to a confirmation page. </p>
+        <p><b>Instructions:</b> Below a list of genes sorted in alphabetical order by gene symbol. Each gene is followed by links to a set of articles that mention the gene and a check box. Your task is to check the boxes to indicate which genes are relevant for the query <i>{{ surveyor.query }}</i>. Note that not all of the genes in the list are relevant. Once you hit submit you should be taken to a confirmation page. </p>
         <form action = '' method ="post">
             {{ formset.management_form }} 
             {% for form in formset.forms %}
@@ -14,7 +14,7 @@
                 <h2>{{ form.instance.getGene.symbol}}</h2>
                 <h3>{{ form.instance.getGene.name }}</h3>
                 {% for abstract in form.instance.getGene.abstracts.all %}
-                <li> {{abstract.author}}; <i>{{abstract.title}} </i>, PubMed: <a href="{{abstract.link}}" target = "_blank">{{abstract.pmid}} </a></li>
+                <li> {{abstract.author}}; <i>{{abstract.title}} </i> <a href="{{abstract.link}}" target = "_blank">PMID:{{abstract.pmid}} </a></li>
                 {% endfor %}
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -22,5 +22,6 @@
             {% endfor %}
             <input type="submit" value="OK"/>
         </form>
-    </body>        
+    </body>     
+    </font>
 </HTML>
