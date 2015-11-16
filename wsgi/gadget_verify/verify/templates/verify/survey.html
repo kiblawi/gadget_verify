@@ -6,7 +6,7 @@
     </head>
     <h1>{{ surveyor.name }} - {{ surveyor.query }}</h1>
     <body>
-        <p><b>Instructions:</b> Below a list of genes sorted in alphabetical order by gene symbol. Each gene is followed by links to a set of articles that mention the gene and a check box. Your task is to check the boxes to indicate which genes are relevant for the query <i>{{ surveyor.query }}</i>. Note that not all of the genes in the list are relevant. Once you hit submit you should be taken to a confirmation page. </p>
+        <p><b>Instructions:</b> Below is a list of genes sorted in alphabetical order by gene symbol. Each gene is followed by links to a set of articles that mention the gene and a check box. Your task is to check the boxes to indicate which genes are relevant for the query <i>{{ surveyor.query }}</i>. Note that not all of the genes in the list are relevant. Once you hit submit you should be taken to a confirmation page. </p>
         <form action = '' method ="post">
             {{ formset.management_form }} 
             {% for form in formset.forms %}
